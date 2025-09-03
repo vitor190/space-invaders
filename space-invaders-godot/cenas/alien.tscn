@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhtyoq0qv5efp"]
+
+[ext_resource type="Texture2D" uid="uid://du606w277iwix" path="res://Assets Space Invades/Sprites/alien1.png" id="1_bqx7c"]
+[ext_resource type="Script" path="res://cenas/alien.gd" id="1_o4thi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwvk"]
+size = Vector2(11.0351, 8)
+
+[sub_resource type="Animation" id="Animation_l8342"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_v1d1r"]
+resource_name = "destroy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"elimination"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_o4thi"]
+resource_name = "lives"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yycb"]
+_data = {
+"RESET": SubResource("Animation_l8342"),
+"destroy": SubResource("Animation_v1d1r"),
+"lives": SubResource("Animation_o4thi")
+}
+
+[node name="alien" type="CharacterBody2D" groups=["aliens"]]
+position = Vector2(-0.00194931, 0)
+script = ExtResource("1_o4thi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bqx7c")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.00194931, 0)
+shape = SubResource("RectangleShape2D_5wwvk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1yycb")
+}
+autoplay = "lives"
+
+[node name="timerMovimento" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="spawnPoint" type="Marker2D" parent="."]
+position = Vector2(0, 8.05334)
+
+[connection signal="timeout" from="timerMovimento" to="." method="_on_timer_movimento_timeout"]

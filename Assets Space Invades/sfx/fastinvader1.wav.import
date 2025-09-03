@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dua077nla4hko"
+path="res://.godot/imported/fastinvader1.wav-803def4114d83fbb3bcd1c0a37d45bbc.sample"
+
+[deps]
+
+source_file="res://Assets Space Invades/sfx/fastinvader1.wav"
+dest_files=["res://.godot/imported/fastinvader1.wav-803def4114d83fbb3bcd1c0a37d45bbc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

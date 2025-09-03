@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://deau28klggabk"]
+
+[ext_resource type="Script" path="res://cenas/main.gd" id="1_r8gke"]
+[ext_resource type="PackedScene" uid="uid://b11bxbk7iya5e" path="res://cenas/jogador.tscn" id="1_t4ukd"]
+[ext_resource type="Texture2D" uid="uid://da2vdx83wlyah" path="res://Assets Space Invades/images/espaco-roxos-azuis-astronomia-imagem-de-fundo.jpg" id="2_5wwvk"]
+[ext_resource type="PackedScene" uid="uid://cfj6g8pus0mj5" path="res://cenas/groupAliens.tscn" id="3_4fhxt"]
+[ext_resource type="FontFile" uid="uid://dk8jo27fiebl0" path="res://fonts/atari-classic-font/AtariClassic-gry3.ttf" id="5_1c3gr"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_r8gke")
+
+[node name="Espaco-roxos-azuis-astronomia-imagem-de-fundo" type="Sprite2D" parent="."]
+position = Vector2(128, 128)
+scale = Vector2(0.294253, 0.470588)
+texture = ExtResource("2_5wwvk")
+
+[node name="jogador" parent="." instance=ExtResource("1_t4ukd")]
+position = Vector2(129.498, 228)
+
+[node name="groupAliens" parent="." instance=ExtResource("3_4fhxt")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 5.0
+offset_bottom = 55.0
+grow_horizontal = 2
+
+[node name="TituloPontos" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1c3gr")
+text = "PONTOS"
+horizontal_alignment = 1
+
+[node name="LabelPontos" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1c3gr")
+text = "0"
+horizontal_alignment = 1

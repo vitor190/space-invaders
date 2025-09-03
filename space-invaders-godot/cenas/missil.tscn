@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://mlu7162wevsf"]
+
+[ext_resource type="Script" path="res://cenas/missil.gd" id="1_0vnr1"]
+[ext_resource type="Texture2D" uid="uid://ltosajbc12am" path="res://Assets Space Invades/Sprites/disparoEnemigo.png" id="2_m2lyk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ict22"]
+size = Vector2(3.02598, 6.99448)
+
+[node name="Missil" type="Area2D"]
+script = ExtResource("1_0vnr1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.98096, -0.697082)
+rotation = -1.57079
+scale = Vector2(0.0333776, 0.0599381)
+texture = ExtResource("2_m2lyk")
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0129335, 0.00498962)
+shape = SubResource("RectangleShape2D_ict22")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

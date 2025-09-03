@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://jctr0ytwmovg"]
+
+[ext_resource type="Script" path="res://cenas/bloco.gd" id="1_acr6u"]
+[ext_resource type="Texture2D" uid="uid://cimo45vues42" path="res://Assets Space Invades/Sprites/bloque.png" id="1_ajixf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r4dn"]
+size = Vector2(4, 4)
+
+[sub_resource type="Animation" id="Animation_7d0e6"]
+resource_name = "normal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3pfi8"]
+resource_name = "danificado"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_5sfjj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6r5mp"]
+_data = {
+"RESET": SubResource("Animation_5sfjj"),
+"danificado": SubResource("Animation_3pfi8"),
+"normal": SubResource("Animation_7d0e6")
+}
+
+[node name="Bloco" type="StaticBody2D" groups=["blocos"]]
+script = ExtResource("1_acr6u")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ajixf")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2r4dn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6r5mp")
+}
+autoplay = "normal"
