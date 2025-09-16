@@ -1,12 +1,15 @@
 extends Node
 
 var Alien = preload("res://cenas/alien.tscn")
+var Bonus = preload("res://cenas/bonus.tscn")
 
 @onready var timer_disparar = $TimerDisparo
 
 var lista_aliens = []
 
 func _ready():
+	$TimerBonus.wait_time = randf_range(3.0, 20.0)
+	$TimerBonus.start()
 	for j in range(4):
 		lista_aliens.append([])
 		for i in range(8):
@@ -47,3 +50,9 @@ func _on_timer_disparo_timeout():
 		lista_aliens_vivos[indice].disparar()
 		timer_disparar.wait_time = randf_range(0.8, 1)
 		
+
+
+func _on_timer_bonus_timeout():
+	var bonus = Bonus.instantiate()
+	self.add_child(bonus)
+	bonus.connect("bonus_eliminado", Callable(get_parent(), "somar_bonus"))

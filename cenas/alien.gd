@@ -24,7 +24,8 @@ func _on_timer_movimento_timeout():
 
 func explosion():
 	animation_alien.play("destroy")
-
+	$AudioStreamPlayer2D.play()
+	
 func elimination():
 	emit_signal("alien_eliminado")
 	get_parent().remove_child(self)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b11bxbk7iya5e"]
+[gd_scene load_steps=8 format=3 uid="uid://b11bxbk7iya5e"]
 
 [ext_resource type="Script" uid="uid://csbasmn0fupg1" path="res://cenas/jogador.gd" id="1_06a7y"]
 [ext_resource type="Texture2D" uid="uid://cj5288q88uto6" path="res://Assets Space Invades/Sprites/jugador.png" id="2_w41yl"]
-[ext_resource type="AudioStream" uid="uid://cvcvpq3m3k0sp" path="res://Assets Space Invades/sfx/shoot.wav" id="3_w41yl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b30p5"]
 size = Vector2(15, 5.98123)
@@ -33,7 +32,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
@@ -55,7 +54,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ax54i"]
 resource_name = "vivo"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,6 +76,7 @@ _data = {
 
 [node name="jogador" type="CharacterBody2D" groups=["tanque"]]
 script = ExtResource("1_06a7y")
+laser = null
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -101,8 +100,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_epdo5")
 }
 autoplay = "vivo"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_w41yl")
 
 [connection signal="timeout" from="timerDisparo" to="." method="_on_timer_disparo_timeout"]

@@ -24,6 +24,7 @@ func _physics_process(delta):
 		get_parent().add_child(l)
 		pode_disparar = false
 		timer_disparo.start()
+		$AudioStreamPlayer2D.play()
 
 	move_and_slide()
 

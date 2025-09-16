@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfj6g8pus0mj5"]
 
-[ext_resource type="Script" path="res://cenas/groupAliens.gd" id="1_r6gns"]
+[ext_resource type="Script" uid="uid://m1gaq6wo58o1" path="res://cenas/groupAliens.gd" id="1_r6gns"]
 
 [node name="groupAliens" type="Node"]
 script = ExtResource("1_r6gns")
@@ -13,5 +13,8 @@ autostart = true
 wait_time = 3.0
 autostart = true
 
+[node name="TimerBonus" type="Timer" parent="."]
+
 [connection signal="timeout" from="TimerDescida" to="." method="_on_timer_descida_timeout"]
 [connection signal="timeout" from="TimerDisparo" to="." method="_on_timer_disparo_timeout"]
+[connection signal="timeout" from="TimerBonus" to="." method="_on_timer_bonus_timeout"]
