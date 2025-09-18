@@ -1,14 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://jctr0ytwmovg"]
 
-[ext_resource type="Script" path="res://cenas/bloco.gd" id="1_acr6u"]
+[ext_resource type="Script" uid="uid://dwqvug1h3k67p" path="res://cenas/bloco.gd" id="1_acr6u"]
 [ext_resource type="Texture2D" uid="uid://cimo45vues42" path="res://Assets Space Invades/Sprites/bloque.png" id="1_ajixf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2r4dn"]
 size = Vector2(4, 4)
 
-[sub_resource type="Animation" id="Animation_7d0e6"]
-resource_name = "normal"
-length = 0.5
+[sub_resource type="Animation" id="Animation_5sfjj"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,8 +37,9 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_5sfjj"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_7d0e6"]
+resource_name = "normal"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,9 +55,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6r5mp"]
 _data = {
-"RESET": SubResource("Animation_5sfjj"),
-"danificado": SubResource("Animation_3pfi8"),
-"normal": SubResource("Animation_7d0e6")
+&"RESET": SubResource("Animation_5sfjj"),
+&"danificado": SubResource("Animation_3pfi8"),
+&"normal": SubResource("Animation_7d0e6")
 }
 
 [node name="Bloco" type="StaticBody2D" groups=["blocos"]]
@@ -73,6 +73,6 @@ shape = SubResource("RectangleShape2D_2r4dn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_6r5mp")
+&"": SubResource("AnimationLibrary_6r5mp")
 }
 autoplay = "normal"

@@ -16,7 +16,7 @@ size = Vector2(254, 20)
 script = ExtResource("1_r8gke")
 
 [node name="Espaco-roxos-azuis-astronomia-imagem-de-fundo" type="Sprite2D" parent="."]
-position = Vector2(128, 128)
+position = Vector2(129, 127)
 scale = Vector2(0.294253, 0.470588)
 texture = ExtResource("2_5wwvk")
 
@@ -29,27 +29,38 @@ position = Vector2(123, 250)
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 5.0
-offset_bottom = 55.0
+offset_bottom = 57.0
 grow_horizontal = 2
 
 [node name="TituloPontos" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_1c3gr")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 9
 text = "Pontos:"
 horizontal_alignment = 1
 
 [node name="LabelPontos" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_1c3gr")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 10
 text = "0"
 horizontal_alignment = 1
+
+[node name="LabelVidas" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1c3gr")
+theme_override_font_sizes/font_size = 5
+
+[node name="LabelTempo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1c3gr")
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 2
 
 [node name="Basea" type="Node" parent="."]
 
 [node name="Base" type="Node2D" parent="Basea"]
-position = Vector2(227, 220)
+position = Vector2(225, 220)
 metadata/_edit_group_ = true
 
 [node name="Bloco" parent="Basea/Base" instance=ExtResource("6_6luf3")]
@@ -87,47 +98,8 @@ position = Vector2(-9, 12)
 [node name="Bloco12" parent="Basea/Base" instance=ExtResource("6_6luf3")]
 position = Vector2(9, 12)
 
-[node name="Base2" type="Node2D" parent="Basea"]
-position = Vector2(190, 220)
-metadata/_edit_group_ = true
-
-[node name="Bloco" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-
-[node name="Bloco2" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(4, 0)
-
-[node name="Bloco3" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(-4, 0)
-
-[node name="Bloco4" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(-4, 4)
-
-[node name="Bloco5" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(0, 4)
-
-[node name="Bloco6" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(4, 4)
-
-[node name="Bloco7" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(8, 4)
-
-[node name="Bloco8" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(-8, 4)
-
-[node name="Bloco9" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(-9, 8)
-
-[node name="Bloco10" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(9, 8)
-
-[node name="Bloco11" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(-9, 12)
-
-[node name="Bloco12" parent="Basea/Base2" instance=ExtResource("6_6luf3")]
-position = Vector2(9, 12)
-
 [node name="Base3" type="Node2D" parent="Basea"]
-position = Vector2(151, 220)
+position = Vector2(160, 221)
 metadata/_edit_group_ = true
 
 [node name="Bloco" parent="Basea/Base3" instance=ExtResource("6_6luf3")]
@@ -166,7 +138,7 @@ position = Vector2(-9, 12)
 position = Vector2(9, 12)
 
 [node name="Base4" type="Node2D" parent="Basea"]
-position = Vector2(98, 220)
+position = Vector2(91, 221)
 metadata/_edit_group_ = true
 
 [node name="Bloco" parent="Basea/Base4" instance=ExtResource("6_6luf3")]
@@ -204,47 +176,8 @@ position = Vector2(-9, 12)
 [node name="Bloco12" parent="Basea/Base4" instance=ExtResource("6_6luf3")]
 position = Vector2(9, 12)
 
-[node name="Base5" type="Node2D" parent="Basea"]
-position = Vector2(61, 220)
-metadata/_edit_group_ = true
-
-[node name="Bloco" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-
-[node name="Bloco2" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(4, 0)
-
-[node name="Bloco3" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(-4, 0)
-
-[node name="Bloco4" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(-4, 4)
-
-[node name="Bloco5" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(0, 4)
-
-[node name="Bloco6" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(4, 4)
-
-[node name="Bloco7" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(8, 4)
-
-[node name="Bloco8" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(-8, 4)
-
-[node name="Bloco9" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(-9, 8)
-
-[node name="Bloco10" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(9, 8)
-
-[node name="Bloco11" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(-9, 12)
-
-[node name="Bloco12" parent="Basea/Base5" instance=ExtResource("6_6luf3")]
-position = Vector2(9, 12)
-
 [node name="Base6" type="Node2D" parent="Basea"]
-position = Vector2(24, 220)
+position = Vector2(25, 222)
 metadata/_edit_group_ = true
 
 [node name="Bloco" parent="Basea/Base6" instance=ExtResource("6_6luf3")]

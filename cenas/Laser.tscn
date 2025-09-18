@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://du8gyj6gfhu0c"]
 
 [ext_resource type="Script" uid="uid://bv2ln6ovh2ust" path="res://cenas/Laser.gd" id="1_o44x0"]
-[ext_resource type="Texture2D" uid="uid://tv8yv07a2lsc" path="res://Assets Space Invades/Sprites/canetaAzul.png" id="2_o44x0"]
+[ext_resource type="Texture2D" uid="uid://b8j523hxmiid8" path="res://Assets Space Invades/Sprites/disparoJugador.png" id="2_o44x0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o44x0"]
 size = Vector2(1, 7)
@@ -11,10 +11,11 @@ position = Vector2(0, -3.5)
 script = ExtResource("1_o44x0")
 
 [node name="laser" type="Sprite2D" parent="."]
-position = Vector2(0.0680529, -0.048299)
-rotation = -0.00848493
-scale = Vector2(0.0325865, 0.0152992)
+position = Vector2(-1.11034, 0.864243)
+rotation = -1.56492
+scale = Vector2(0.0340552, 0.0199702)
 texture = ExtResource("2_o44x0")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o44x0")

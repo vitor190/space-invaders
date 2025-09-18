@@ -48,7 +48,7 @@ func _on_timer_disparo_timeout():
 	if lista_aliens_vivos:
 		var indice = int(floor(randf_range(0, len(lista_aliens_vivos)-1)))
 		lista_aliens_vivos[indice].disparar()
-		timer_disparar.wait_time = randf_range(0.8, 1)
+		timer_disparar.wait_time = randf_range(1, 3)
 		
 
 

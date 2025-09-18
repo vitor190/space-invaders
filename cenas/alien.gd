@@ -15,6 +15,7 @@ signal alien_eliminado
 func _ready():
 	time_movimento.start()
 	origin = self.position.x
+	add_to_group("aliens")
 
 func _on_timer_movimento_timeout():
 	print(self.position.x)
